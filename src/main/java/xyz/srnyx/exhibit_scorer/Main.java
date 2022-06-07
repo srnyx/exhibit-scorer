@@ -16,11 +16,9 @@ public class Main {
     public static void main(String[] args) {
         final ConsoleHandler handler = new ConsoleHandler();
         handler.setFormatter(new Format());
-
         final Logger logger = Logger.getLogger("Exhibit-Scorer");
         logger.setUseParentHandlers(false);
         logger.addHandler(handler);
-
 
         if (args.length < 2) {
             logger.warning("Usage: \"java -jar Exhibit-Scorer-all.jar <shakespeare|slang> <sentence...>\"");
@@ -66,7 +64,7 @@ public class Main {
      * @param   sentence    the sentence to check
      * @param   passed      whether to return the words that were found or not found
      *
-     * @return              a list of the given type's words that were either found or not found
+     * @return              a list of either the found or not found words of the given type
      */
     private static List<String> words(String type, String[] sentence, boolean passed) {
         List<String> list = new ArrayList<>();
